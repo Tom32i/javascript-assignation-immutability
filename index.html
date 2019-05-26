@@ -3,6 +3,7 @@
 <head>
     <title></title>
     <link rel="stylesheet" type="text/css" href="app.css">
+    <script src="prism.js" async></script>
     <script src="app.js" async></script>
 </head>
 <body>
@@ -21,7 +22,6 @@ let value = 'foo';
             <p>That can can be re-assigned.</p>
             <code class="input">
 let value = 'foo';
-
 value = 'bar';
             </code>
             <code data-output="value"></code>
@@ -31,7 +31,6 @@ value = 'bar';
             <p>`const` define a constant that can't be re-assigned to a different value.</p>
             <code class="input">
 const value = 'foo';
-
 value = 'bar';
             </code>
             <p>If you try it you'll get an error.</p>
@@ -47,14 +46,14 @@ value = 'bar';
             <code data-output="integer"></code>
             <p>Because `++` operator is means `integer = integer + 1;`</p>
         </section-->
-        <section>
+        <!--section>
             <h2>Arrays are objects</h2>
             <p><a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array">Array</a> is a global class in Javascript that can be instanciated like any object, with a constructor.</p>
             <code class="input">
 let value = new Array();
             </code>
             <code data-output="value"></code>
-        </section>
+        </section-->
         <section>
             <h2>Assigning objects to variables</h2>
             <p>When you instanciate a new object and assign it to a variable: the variable is just a reference to that instance.</p>
@@ -63,7 +62,6 @@ let value = new Array();
             <code class="input">
 let myArray = [];
 let value = myArray;
-
 myArray.push('foo');
             </code>
             <code data-output="myArray"></code>
@@ -77,7 +75,6 @@ myArray.push('foo');
             <p>It will always reference this specific object in memory.</p>
              <code class="input">
 const value = [];
-
 value = 'foo';
             </code>
             <code data-output="value"></code>
@@ -88,7 +85,6 @@ value = 'foo';
             <code class="input">
 let anything = [];
 const value = anything;
-
 anything.push('foo');
 anything = 41;
             </code>

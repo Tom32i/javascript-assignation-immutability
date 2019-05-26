@@ -20,7 +20,11 @@ class Code {
     }
 
     trim() {
-        this.input.innerText = this.input.innerText.trim();
+        this.input.innerHTML = this.highlight(this.input.innerText.trim());
+    }
+
+    highlight(content) {
+        return Prism.highlight(content, Prism.languages.javascript, 'javascript');
     }
 
     exec() {
@@ -42,10 +46,10 @@ class Code {
     }
 
     setContent(values) {
-        this.outputs.map(output => {
+        this.outputs.forEach(output => {
             const key = output.getAttribute('data-output');
-            output.innerText = JSON.stringify(values[key]);
-        }).join(', ');
+            output.innerHTML = this.highlight(JSON.stringify(values[key]));
+        });
 
         this.outputs.forEach(element => element.className = 'success');
         this.outputs.forEach(this.show);

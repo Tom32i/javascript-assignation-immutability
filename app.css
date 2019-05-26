@@ -1,3 +1,15 @@
+:root {
+    --monokai-red: #ff6188;
+    --monokai-green: #a9dc76;
+    --monokai-yellow: #ffd866;
+    --monokai-orange: #fc9867;
+    --monokai-purple: #ab9df2;;
+    --monokai-blue: #78dce8;
+    --monokai-grey: #ccc;
+    --monokai-mutted: #999;
+    --monokai-error: lightcoral;
+}
+
 body {
     background-color: #E5E5E5;
     font-family: Verdana, sans-serif;
@@ -39,19 +51,29 @@ code {
     margin: 1em 0;
     padding: 1em;
     background: #3B3C3C;
-    color: plum;
+    color: white;
     white-space: pre;
     display: block;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    tab-size: 4;
+    hyphens: none;
 }
 
 code.success {
-    color: mediumspringgreen;
-    border-bottom: 0.5em solid mediumspringgreen;
+    color: var(--monokai-green);
+    margin-left: -0.5em;
+    border-left: 0.5em solid var(--monokai-green);
 }
 
 code.error {
-    color: lightcoral;
-    border-bottom: 0.5em solid lightcoral;
+    color: var(--monokai-error);
+    border-left: 0.5em solid var(--monokai-error);
+    margin-left: -0.5em;
 }
 
 code[data-output] {
@@ -59,8 +81,72 @@ code[data-output] {
 }
 code[data-output]::before {
     content: attr(data-output);
-    color: silver;
+    color: var(--monokai-mutted);
     margin-right: 1em;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: var(--monokai-mutted);
+}
+
+.token.punctuation {
+    color: var(--monokai-grey);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+    color: var(--monokai-red);
+}
+
+.token.boolean,
+.token.number {
+    color: var(--monokai-purple);
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+    color: var(--monokai-orange);
+}
+
+.token.function-name,
+.token.function,
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+    color: var(--monokai-blue);
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+    color: var(--monokai-yellow);
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
 }
 
 hr {
